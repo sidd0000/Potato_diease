@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./FASTAPI
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./FASTAPI:/app
+
+  frontend:
+    build: ./frontend/potato-disease-detector
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/potato-disease-detector:/app
+    depends_on:
+      - backend  # Ensure backend starts first
+
+  mobile:
+    build: ./frontend/app
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./frontend/app:/app
+    command: ["npm", "start"]
