@@ -19,8 +19,8 @@ app = FastAPI()
 
 # Allow CORS for Expo (React Native) and local frontend
 origins = [
-    f"http://10.12.53.52:8081",  # Expo
-    f"http://10.12.53.52:8000",  # API running locally
+    f"http://10.12.36.162:8081",  # Expo
+    f"http://10.12.36.162:8000",  # API running locally
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
